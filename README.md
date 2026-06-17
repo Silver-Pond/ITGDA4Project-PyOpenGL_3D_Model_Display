@@ -1,4 +1,3 @@
-<img width="1920" height="1080" alt="Screenshot (185)" src="https://github.com/user-attachments/assets/6f23c70b-4d29-45c5-8e69-ddbf2d322067" />
 Question 1 - 3D Model Display (PyOpenGL)
 
 Requirements:
