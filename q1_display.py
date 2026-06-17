@@ -329,9 +329,9 @@ main()
     Pygame Community. 2024 Pygame documentation. [online]. Available at: https://www.pygame.org/docs/
     [Accessed 26 February 2026].
     
-    OpenGL.org. 2023 PyOpenGL documentation. Available at: http://pyopengl.sourceforge.net/documentation/
+    OpenGL.org. 2023 PyOpenGL documentation. [online]. Available at: http://pyopengl.sourceforge.net/documentation/
     [Accessed 26 February 2026].
     
-    OpenGL.org. 2024 Texture mapping. Available at: https://www.opengl.org/wiki/Texture_Mapping
+    OpenGL.org. 2024 Texture mapping. [online]. Available at: https://www.opengl.org/wiki/Texture_Mapping
     [Accessed 29 February 2026].   
 """
