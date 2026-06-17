@@ -39,8 +39,8 @@ Translation Controls:
   - S → Move Negative Y
 
 - Z-axis:
-  - E → Move Positive Z
-  - Q → Move Negative Z
+  - Q → Move Positive Z
+  - E → Move Negative Z
 
 Note:
 - When models are cycled, the new model remains in the same translated position.
@@ -83,8 +83,8 @@ Translation Controls:
   - S → Move Negative Y
 
 - Z-axis:
-  - E → Move Positive Z
-  - Q → Move Negative Z
+  - Q → Move Positive Z
+  - E → Move Negative Z
 
 Press C → Cycle rendering modes:
 - 0 → Wireframe
