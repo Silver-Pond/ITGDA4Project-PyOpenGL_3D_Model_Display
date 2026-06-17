@@ -6,6 +6,8 @@ from OpenGL.GLU import *
 # ===================
 # Model Data
 # ===================
+
+# For The Cube
 Cube_Vertices = (
     (1, -1, -1),
     (1, 1, -1),
@@ -33,6 +35,7 @@ Cube_Surfaces = (
     (4,0,3,6)
 )
 
+# For The Pyramid
 Pyramid_Vertices = (
     (1, -1, 1),
     (-1, -1, 1),
@@ -52,6 +55,7 @@ Pyramid_Surfaces = (
     (1, 2, 3)
 )
 
+# For The Prism
 Prism_Vertices = (
     (-1, -1, 1),
     (1, -1, 1),
@@ -248,16 +252,42 @@ def main():
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
     pygame.display.set_caption("Q1 - 3D Model Display")
 
-    # Perspective camera (sentdex, 2014).
+    # Set the current matrix mode to the projection matrix (OpenGL.org., 2023).
+    glMatrixMode(GL_PROJECTION)
+
+    # Reset the projection matrix to remove any previous transformations
+    # before applying the perspective projection (OpenGL.org., 2023).
+    glLoadIdentity()
+
+    # Perspective camera (sentdex, 2014; OpenGL.org., 2023).
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
 
-    # Move camera backwards so it is NOT inside model (sentdex, 2014).
-    glTranslatef(0.0, 0.0, -6)
+    # Switch to the model-view matrix (OpenGL.org., 2023).
+    glMatrixMode(GL_MODELVIEW)
 
+    # Reset the projection matrix to remove any previous transformations
+    # before applying the perspective projection (OpenGL.org., 2023).
+    glLoadIdentity()
+
+    # Enable depth testing so OpenGL correctly determines which surfaces are in
+    # front of others (OpenGL.org., 2023).
     glEnable(GL_DEPTH_TEST)
 
     # Load texture
     texture_id = load_texture("img/playboy_frontv.png")
+
+    # =======================
+    # Store object position
+    # =======================
+    position_x = 0.0
+    position_y = 0.0
+    position_z = 0.0
+
+    # Store rotation separately
+    rotation_angle = 0.0
+
+    # Setting movement speed
+    move_speed = 1.0
 
     while True:
         for event in pygame.event.get():
@@ -275,20 +305,24 @@ def main():
                 # =======================
                 # Question 2 (sentdex, 2014).
                 # =======================
+
+                # Left and right movement
                 if event.key == pygame.K_a:
-                    glTranslatef(-1, 0, 0)
+                    position_x -= move_speed
                 if event.key == pygame.K_d:
-                    glTranslatef(1, 0, 0)
+                    position_x += move_speed
 
+                # Up and down movement
                 if event.key == pygame.K_w:
-                    glTranslatef(0, 1, 0)
+                    position_y += move_speed
                 if event.key == pygame.K_s:
-                    glTranslatef(0, -1, 0)
+                    position_y -= move_speed
 
+                # Forward and backward movement
                 if event.key == pygame.K_q:
-                    glTranslatef(0, 0, 1)
+                    position_z += move_speed
                 if event.key == pygame.K_e:
-                    glTranslatef(0, 0, -1)
+                    position_z -= move_speed
 
                 # =======================
                 # Question 3 & Question 4 – Toggle render mode (OpenGL.org., 2023; Pygame Community, 2024).
@@ -300,8 +334,19 @@ def main():
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
-        # Optional slight rotation for visibility (sentdex, 2014).
-        glRotatef(0.5, 2, 1, 0.5)
+        # Reset the projection matrix to remove any previous transformations
+        # before applying the perspective projection (OpenGL.org., 2023).
+        glLoadIdentity()
+
+        # Move camera backwards so it is not inside model (sentdex, 2014).
+        glTranslatef(0.0, 0.0, -6.0)
+
+        # Object position using original world axes
+        glTranslatef(position_x, position_y, position_z)
+
+        # Continuous rotation for visibility (sentdex, 2014).
+        rotation_angle += 0.5
+        glRotatef(rotation_angle, 2, 1.5, 0.5)
 
         name, vertices, edges, surfaces = models[current_model_index]
         draw_model(vertices, edges, surfaces)
@@ -309,6 +354,7 @@ def main():
         pygame.display.flip()
         pygame.time.wait(10)
 
+# Execute main
 main()
 
 """
