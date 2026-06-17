@@ -26,7 +26,7 @@ Controls:
 Notes:
 - Models are centred at origin.
 - Camera is positioned at z = -6 to avoid being inside the model.
-===============================================================================================
+=========================================================================================
 
 Question 2 – Translation Controls
 
@@ -49,7 +49,7 @@ Translation Controls:
 
 Note:
 - When models are cycled, the new model remains in the same translated position.
-===============================================================================================
+=========================================================================================
 
 Question 3 – Colour Feature
 
@@ -58,7 +58,7 @@ Press C → Toggle colored surfaces ON/OFF
 Notes:
 - Edges remain white.
 - Surfaces are solid and not transparent.
-===============================================================================================
+=========================================================================================
 
 Question 4 – Texture Feature
 
@@ -70,7 +70,7 @@ Press C → Cycle rendering modes:
 Notes:
 - Texture image file included in submission.
 - Previous features (translation, rotation, swapping) remain functional.
-===============================================================================================
+=========================================================================================
 
 Question 5 – Textured With Color Tint Feature
 
@@ -96,4 +96,4 @@ Press C → Cycle rendering modes:
 - 1 → Colored
 - 2 → Textured
 - 3 → Textured with color tint
-===============================================================================================
+=========================================================================================
