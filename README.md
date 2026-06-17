@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="Screenshot (185)" src="https://github.com/user-attachments/assets/6f23c70b-4d29-45c5-8e69-ddbf2d322067" />
 Question 1 - 3D Model Display (PyOpenGL)
 
 Requirements:
@@ -11,13 +12,13 @@ Install dependencies:
 
 How to Run:
 1. Open the IDE of your choice, for me its PyCharm
-![Screenshot (185).png](../../OneDrive/Pictures/Screenshots/Screenshot%20%28185%29.png)
+<img width="1920" height="1080" alt="Screenshot (185)" src="https://github.com/user-attachments/assets/be51024f-3450-4c6c-a6a0-e0831ea4c1b1" />
 
 2. Press on the "Open" button on the top and select the folder
-![Screenshot (186).png](../../OneDrive/Pictures/Screenshots/Screenshot%20%28186%29.png)
+<img width="1920" height="1080" alt="Screenshot (186)" src="https://github.com/user-attachments/assets/7be5b949-459b-4ab0-b60d-4b64cebee8e9" />
 
 3. Press the green play button at the top and run python q1_display.py
-![Screenshot (187).png](../../OneDrive/Pictures/Screenshots/Screenshot%20%28187%29.png)
+<img width="1920" height="1080" alt="Screenshot (187)" src="https://github.com/user-attachments/assets/fde780ed-fb00-4ea5-b951-b24886eba78f" />
 
 Controls:
 - SPACE → Cycle between Cube, Pyramid, and Prism
